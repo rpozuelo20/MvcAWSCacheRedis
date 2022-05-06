@@ -24,7 +24,7 @@ namespace MvcAWSCacheRedis.Services
         public void AddProductoCache(Producto producto)
         {
             List<Producto> productos;
-            string json = this.cache.StringGet("productoscache");
+            string json = this.cache.StringGet("cache-productos");
             if (json == null)
             {
                 productos = new List<Producto>();
@@ -38,12 +38,12 @@ namespace MvcAWSCacheRedis.Services
             //VOLVEMOS A SERIALIZAR
             json = JsonConvert.SerializeObject(productos);
             //ALMACENAMOS LOS PRODUCTOS EN CACHE REDIS AWS
-            this.cache.StringSet("productoscache", json, TimeSpan.FromMinutes(30));
+            this.cache.StringSet("cache-productos", json, TimeSpan.FromMinutes(30));
         }
 
         public List<Producto> GetProductosCache()
         {
-            string json = this.cache.StringGet("productoscache");
+            string json = this.cache.StringGet("cache-productos");
             if (json == null)
             {
                 return null;
@@ -69,14 +69,14 @@ namespace MvcAWSCacheRedis.Services
                 //SI NO HAY MAS PRODUCTOS, ELIMINAMOS LA CLAVE
                 if (productos.Count == 0)
                 {
-                    this.cache.KeyDelete("productoscache");
+                    this.cache.KeyDelete("cache-productos");
                 }
                 else
                 {
                     //SERIALIZAMOS Y ALMACENAMOS LOS DATOS SIN EL PRODUCTO ELIMINADO
                     String json = JsonConvert.SerializeObject(productos);
                     this.cache.StringSet
-                    ("productoscache", json, TimeSpan.FromMinutes(30));
+                    ("cache-productos", json, TimeSpan.FromMinutes(30));
                 }
             }
         }
