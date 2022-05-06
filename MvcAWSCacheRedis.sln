@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcAWSCacheRedis", "MvcAWSCacheRedis\MvcAWSCacheRedis.csproj", "{E1CDA558-9EE2-4BBB-924F-0D1E38EBB6BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E1CDA558-9EE2-4BBB-924F-0D1E38EBB6BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1CDA558-9EE2-4BBB-924F-0D1E38EBB6BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1CDA558-9EE2-4BBB-924F-0D1E38EBB6BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1CDA558-9EE2-4BBB-924F-0D1E38EBB6BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {94D9586F-B4D9-461A-B19A-413DBD14A95A}
+	EndGlobalSection
+EndGlobal
