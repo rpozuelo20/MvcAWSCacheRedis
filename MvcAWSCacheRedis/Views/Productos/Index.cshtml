@@ -7,7 +7,7 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    @TempData["MENSAJE"]
 </p>
 <table class="table">
     <thead>
@@ -50,6 +50,7 @@
             </td>
             <td>
                 <a asp-action="Details" asp-route-id="@item.IdProducto">Details</a>
+                <a asp-action="SeleccionarFavorito" asp-route-id="@item.IdProducto"></a>
             </td>
         </tr>
 }

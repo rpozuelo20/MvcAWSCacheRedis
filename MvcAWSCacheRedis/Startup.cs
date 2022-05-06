@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MvcAWSCacheRedis.Helpers;
 using MvcAWSCacheRedis.Repositories;
+using MvcAWSCacheRedis.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,8 @@ namespace MvcAWSCacheRedis
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<RepositoryProductos>();
-            services.AddTransient<PathProvider>();
+            services.AddSingleton<PathProvider>();
+            services.AddTransient<ServiceCacheAWS>();
 
             services.AddControllersWithViews();
         }
